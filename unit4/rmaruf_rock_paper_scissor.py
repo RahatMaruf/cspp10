@@ -9,11 +9,11 @@ def get_p1_move():
     #code here
     choice = input("Rock, paper, or scissor? ")
     if choice == "rock":
-        print ("r")
+        return ("r")
     elif choice == "paper":
-        print ("p")
+        return ("p")
     elif choice == "scissor":
-        print ("s")
+        return ("s")
 
 #function name: get_comp_move():
 #   arguments: none
@@ -22,10 +22,13 @@ def get_p1_move():
 #   returns: the computer's randomly generated move
 def get_comp_move():
     compchoice = random.randint(1,4)
-    1 = "r"
-    2 = "p"
-    3 = "s"
-get_comp_move()
+    if compchoice == 1:
+        return ("r")
+    elif compchoice == 2:
+        return ("p")
+    elif compchoice == 3:
+        return ("s")
+
     
     
 
