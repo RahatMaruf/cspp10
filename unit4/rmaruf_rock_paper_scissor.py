@@ -21,7 +21,7 @@ def get_p1_move():
 #            either 'r' 'p' or 's'
 #   returns: the computer's randomly generated move
 def get_comp_move():
-    compchoice = random.randint(1,4)
+    compchoice = random.randint(1,3)
     if compchoice == 1:
         return ("r")
     elif compchoice == 2:
@@ -51,22 +51,16 @@ def get_rounds():
 def get_round_winner(p1move, cmove):
     #code here
     if cmove == "r" and p1move == "s":
-        print ("Computer Wins!Player Loses!")
         return "computer"
     elif cmove == "s" and p1move == "r":
-        print ("Player Wins!Computer Loses!")
         return "player"
     elif cmove == "r" and p1move == "p":
-        print ("Player Wins! Computer Loses!")
         return "player"
     elif cmove == "p" and p1move == "s":
-        print ("Player Wins!Computer Loses!")
         return "player"
     elif cmove == "s" and p1move == "p":
-        print ("Computer Wins!Player Loses!")
         return "computer"
     elif cmove == "p" and p1move == "r":
-        print ("Computer Wins!Player Loses!")
         return "computer"
     else:
         print ("It's a tie")
@@ -108,27 +102,39 @@ def print_score(pscore, cscore, ties):
 def rps():
     #code here
     rounds = get_rounds()
-    cmove = get_comp_move()
-    p1move = get_p1_move()
-     
-    print("Player choice {}".format(get_full_move(p1move) ))
-    print("Computer chose {}".format(get_full_move(cmove) ))
+    p1score = 0
+    coscore = 0
+    tie = 0
+    for rounds in range(int(rounds)):
+        cmove = get_comp_move()
+        p1move = get_p1_move()
     
-    winner = get_round_winner(p1move,cmove)
-    if winner == "player":
-        print("Player won!")
-    elif winner == "computer":
-        print("Computer won!")
-    else:
-        print("It's a tie!")
-    for rounds in range(0,10):
         
-
-#function name: tests
-#   arguments: none
-#   purpose: a place for you to write your tests.  replace 'rps' below
-#               with 'tests' to run this function instead of the game loop
-#   returns: none
+     
+        print("Player choice {}".format(get_full_move(p1move) ))
+        print("Computer chose {}".format(get_full_move(cmove) ))
+    
+        winner = get_round_winner(p1move,cmove)
+        if winner == "player":
+            print("Player won!")
+            p1score = p1score + 1
+        elif winner == "computer":
+            print("Computer won!")
+            coscore = coscore + 1
+        else:
+            print("It's a tie!")
+            tie = tie + 1
+    
+    print_score(p1score,coscore,tie)
+    
+    if p1score > coscore:
+        print("Player Won Overall!")
+    elif p1score < coscore:
+        print("Computer Won Overall!")
+    else:
+        print("No One Wins! :(")
+        
+    
 
 
 rps()
