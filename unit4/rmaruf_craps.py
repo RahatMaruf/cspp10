@@ -19,7 +19,7 @@ def bet():
 
 #make a function that let"s the computer pick out two number betwwn 1 and 6
 
-def dice():
+def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
     return dice1 + dice2
@@ -32,9 +32,12 @@ def loss_or_win():
     elif dice1 + dice2 == 7 or dice1 + dice2 == 11:
         return ("You win. You have $" + str(dabet + playersbank))
         
-def get_phase3():
-    
-    if
+def get_phase3(point_number):
+    roll = roll2dice()
+    while(roll != 7 and roll != point_number):
+        
+        
+        
 
 
 
