@@ -1,3 +1,4 @@
+
 #make funtion where the dice will roll randomly
 
 import random
@@ -23,7 +24,7 @@ def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
     return dice1 + dice2
-    point_number = dice1 + dice2
+    
     
 
     
@@ -34,13 +35,18 @@ def loss_or_win(dice1, dice2, dabet, playersbank):
         return ("You lost. You now have $" + str(dabet - playersbank))
     elif dice1 + dice2 == 7 or dice1 + dice2 == 11:
         return ("You win. You have $" + str(dabet + playersbank))
+    else:
+        return (dice1 + dice2)
+            
+            
+def get_phase3(point_number):
+        roll = roll2dice()
+        while(roll != 7 and roll != point_number):
+            roll2dice()
         
-# def get_phase3(point_number):
-#     roll = roll2dice()
-#     while(roll != 7 and roll != point_number):
         
         
         
         
         
-        
+craps()        
