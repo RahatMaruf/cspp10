@@ -23,30 +23,32 @@ def bet():
 def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
-    return dice1 + dice2
+    point_number = dice1 + dice2
+    return point_number
     
     
 
     
     
-def loss_or_win(dice1, dice2, dabet, playersbank):
+def loss_or_win(dice1, dice2, dabet, playersbank, point_number):
     
-    if dice1 + dice2 == 2 or dice1 + dice2 == 3 or dice1 + dice2 == 12:
+    if point_number == 2 or point_number == 3 or point_number == 12:
         return ("You lost. You now have $" + str(dabet - playersbank))
-    elif dice1 + dice2 == 7 or dice1 + dice2 == 11:
+    elif point_number == 7 or point_number == 11:
         return ("You win. You have $" + str(dabet + playersbank))
     else:
-        return (dice1 + dice2)
+        return (point_number)
             
             
 def get_phase3(point_number):
         roll = roll2dice()
         while(roll != 7 and roll != point_number):
-            roll2dice()
+            return roll
+            if point_number == 7:
+                return ("You lose!")
+            elif point_number
         
         
         
         
         
-        
-craps()        
