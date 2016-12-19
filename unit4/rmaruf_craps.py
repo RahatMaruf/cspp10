@@ -17,6 +17,7 @@ bank = 10000000000000000000000
 def bet():
     dabet = int(input("You have $100 in your bank. How much would you like to bet from your bank"))
     return (dabet)
+    if dabet
 
 #make a function that let"s the computer pick out two number betwwn 1 and 6
 
@@ -40,13 +41,16 @@ def loss_or_win(dice1, dice2, dabet, playersbank, point_number):
         return (point_number)
             
             
-def get_phase3(point_number):
+def get_phase3(point_number, dabet, playersbank):
         roll = roll2dice()
         while(roll != 7 and roll != point_number):
             return roll
-            if point_number == 7:
-                return ("You lose!")
-            elif point_number
+            if roll == 7:
+                return ("You lose! You now have $" + str(dabet - playersbank))
+            elif roll == point_number:
+                return ("You Win! You now have $" + str(dabet + playersbank))
+                
+                
         
         
         
