@@ -13,7 +13,7 @@ playersbank = 100
 #write a function that asks the user for their bet and takes away the amount they bet from their bank
 
 def bet():
-    dabet = int(input("You have $100 in your bank. How much would you like to bet from your bank"))
+    dabet = int(input("You have $100 in your bank. How much would you like to bet, if any from your bank"))
     if dabet < 0:
         return ("Only positive amount of money!")
     else:
@@ -27,6 +27,7 @@ def roll2dice():
     dice2 = random.randint(1,6)
     point_number = dice1 + dice2
     return point_number
+
 roll2dice()
     
 
@@ -34,12 +35,14 @@ roll2dice()
     
 def loss_or_win(dice1, dice2, dabet, playersbank, point_number):
     
+    
     if point_number == 2 or point_number == 3 or point_number == 12:
         return ("You lost. You now have $" + str(dabet - playersbank))
     elif point_number == 7 or point_number == 11:
         return ("You win. You have $" + str(dabet + playersbank))
     else:
         return (point_number)
+
 loss_or_win()
             
             
@@ -55,7 +58,10 @@ def get_phase3(point_number, dabet, playersbank):
 
 get_phase3()       
                 
-        
+def craps():
+    bet()
+    
+    
         
         
         
