@@ -5,30 +5,27 @@ import random
 
 #the players bank needs to start off with $100
 
+def bank(playersbank):
+    playersbank = 100
 
-playersbank = 100
 
 
-
-#write a function that asks the user for their bet and takes away the amount they bet from their bank
-
-def bet():
-    dabet = int(input("You have $100 in your bank. How much would you like to bet, if any from your bank"))
+def bet(dabet):
+    dabet = int(input("You have $100 in your bank. How much would you like to bet, if any from your bank? "))
     if dabet < 0:
         return ("Only positive amount of money!")
     else:
         return (dabet)
-bet()
 
-#make a function that let"s the computer pick out two number betwwn 1 and 6
 
-def roll2dice():
+
+def roll2dice(dice1, dice2, point_number):
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
     point_number = dice1 + dice2
     return point_number
 
-roll2dice()
+
     
 
     
@@ -43,7 +40,6 @@ def loss_or_win(dice1, dice2, dabet, playersbank, point_number):
     else:
         return (point_number)
 
-loss_or_win()
             
             
 def get_phase3(point_number, dabet, playersbank):
@@ -56,10 +52,9 @@ def get_phase3(point_number, dabet, playersbank):
         elif roll == point_number:
             return ("You Win! You now have $" + str(dabet + playersbank))
 
-get_phase3()       
+      
                 
-def craps():
-    bet()
+
     
     
         
