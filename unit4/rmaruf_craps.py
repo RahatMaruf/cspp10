@@ -43,15 +43,14 @@ def loss_or_win(dice1, dice2, dabet, playersbank, point_number):
             
             
 def get_phase3(point_number, dabet, playersbank):
-        roll = roll2dice()
-        while(roll != 7 and roll != point_number):
-            return roll
-            
-        if roll == 7:
-            return ("You lose! You now have $" + str(dabet - playersbank))
-        elif roll == point_number:
-            return ("You Win! You now have $" + str(dabet + playersbank))
-
+    roll = roll2dice(dice1, dice2, point_number)
+    while(roll != 7 and roll != point_number):
+        return roll
+    if roll == 7:
+        return ("You lose! You now have $" + str(dabet - playersbank))
+    elif roll == point_number:
+        return ("You Win! You now have $" + str(dabet + playersbank))
+ 
       
                 
 
