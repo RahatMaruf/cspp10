@@ -3,8 +3,11 @@ to_replace = 1
 replace_with = 4
 
 def replace_all(original, to_replace, replace_with):
-    for storage in (original):
-        storage.insert(to_replace, 4)
+    for x in range (len(original)):
+        if original[x] == to_replace:
+            original[x] = replace_with
+        
+replace_all(original, to_replace, replace_with)
         
         
 print (original)
