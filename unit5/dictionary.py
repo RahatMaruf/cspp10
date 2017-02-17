@@ -1,7 +1,8 @@
+from pprint import pprint
 d = {}
-choose = input("Add key-value\nRemove Key\nRemove Value\nUpdate\nExit\n choose one. ").lower
-if choose == ("add key-value"):
-    key = d[input("Enter a key. ")]
-    value = d[input("Enter a value. ")]
-    
-    
+choose = input("[Add]\n[Remove Key]\n[Remove Value]\n[Update]\n[Exit]\n choose one. ")
+if choose == ("Add"):
+    key = input("Enter a key. ")
+    value = input("Enter a value. ")
+    d[key] = value 
+pprint(d)
